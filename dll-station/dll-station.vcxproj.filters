@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="common">
+      <UniqueIdentifier>{fc64a6cd-08c6-4e3e-a06f-ba36a448606a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework">
+      <UniqueIdentifier>{80c35fec-87bf-4fbc-9cea-23e882283088}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server">
+      <UniqueIdentifier>{84ac021f-cd84-4b93-8854-854ce06a782b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dlls">
+      <UniqueIdentifier>{7070facf-c45a-4719-84cb-b569868b7873}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="handler">
+      <UniqueIdentifier>{cd1d970b-37b7-4526-8556-7d2e7ccef964}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="json">
+      <UniqueIdentifier>{2b84fc4a-a0c9-4e4b-a00f-33038581a48f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools">
+      <UniqueIdentifier>{95013a95-6186-49ae-ad20-e1884c0649e4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common\mongoose.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\stdafx.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="framework\targetver.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="server\http_server.h">
+      <Filter>server</Filter>
+    </ClInclude>
+    <ClInclude Include="dlls\sieaf-m.h">
+      <Filter>dlls</Filter>
+    </ClInclude>
+    <ClInclude Include="handler\handler-mapping.h">
+      <Filter>handler</Filter>
+    </ClInclude>
+    <ClInclude Include="handler\protocol.h">
+      <Filter>handler</Filter>
+    </ClInclude>
+    <ClInclude Include="common\macro.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json_value_transfer.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json_value_transfer.hxx">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\string.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\string.hxx">
+      <Filter>tools</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="common\mongoose.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\stdafx.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="framework\dll-station.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="server\http_server.cpp">
+      <Filter>server</Filter>
+    </ClCompile>
+    <ClCompile Include="dlls\sieaf-m.cpp">
+      <Filter>dlls</Filter>
+    </ClCompile>
+    <ClCompile Include="handler\handler-mapping.cpp">
+      <Filter>handler</Filter>
+    </ClCompile>
+    <ClCompile Include="handler\protocol.cpp">
+      <Filter>handler</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
