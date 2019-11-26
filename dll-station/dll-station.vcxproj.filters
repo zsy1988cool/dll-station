@@ -63,6 +63,12 @@
     <ClInclude Include="tools\string.hxx">
       <Filter>tools</Filter>
     </ClInclude>
+    <ClInclude Include="tools\utility.hxx">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="tools\utility.h">
+      <Filter>tools</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common\mongoose.c">

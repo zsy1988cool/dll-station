@@ -77,6 +77,11 @@ void HandlerMapping::handleBusiness(const std::string& requeststr, std::string& 
 	memset(outputData, 0, 30000);
 	int ret = business_handle(inputValue.c_str(), outputlen, outputData, errMsg);
 
+	if (ret == 0)
+	{
+		responsestr = outputData;
+		return;
+	}
 	Response response;
 	response.SetFlag(ret);
 	response.SetErrMsg(errMsg);

@@ -42,12 +42,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>./framework;./;..\deps\jsoncpp-src-0.5.0\include;$(IncludePath)</IncludePath>
+    <IncludePath>./framework;./;..\deps\jsoncpp-src-0.5.0\include;$(IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>..\deps\jsoncpp-src-0.5.0\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>./framework;./;$(VC_IncludePath);$(WindowsSDK_IncludePath);..\deps\jsoncpp-src-0.5.0\include</IncludePath>
+    <IncludePath>./framework;./;$(VC_IncludePath);$(WindowsSDK_IncludePath);..\deps\jsoncpp-src-0.5.0\include;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include</IncludePath>
     <LibraryPath>..\deps\jsoncpp-src-0.5.0\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -72,7 +72,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
@@ -101,6 +101,8 @@
     <ClInclude Include="server\http_server.h" />
     <ClInclude Include="tools\string.h" />
     <ClInclude Include="tools\string.hxx" />
+    <ClInclude Include="tools\utility.h" />
+    <ClInclude Include="tools\utility.hxx" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common\mongoose.c" />

@@ -1,14 +1,17 @@
 #include <utility>
 #include "server/http_server.h"
+#include "tools/utility.h"
 
 // 初始化HttpServer静态类成员
 mg_serve_http_opts HttpServer::s_server_option;
-std::string HttpServer::s_web_dir = "./web";
+std::string HttpServer::s_web_dir = ".\\web";
 std::unordered_map<std::string, ReqHandler> HttpServer::s_handler_map;
 std::unordered_set<mg_connection *> HttpServer::s_websocket_session_set;
 
 void HttpServer::Init(const std::string &port)
 {
+	s_web_dir = GetModuleDirA() + "web";
+
 	m_port = port;
 	s_server_option.enable_directory_listing = "yes";
 	s_server_option.document_root = s_web_dir.c_str();
@@ -16,7 +19,7 @@ void HttpServer::Init(const std::string &port)
 	// 其他http设置
 
 	// 开启 CORS，本项只针对主页加载有效
-	// s_server_option.extra_headers = "Access-Control-Allow-Origin: *";
+	s_server_option.extra_headers = "Access-Control-Allow-Origin: *";
 }
 
 bool HttpServer::Start()
@@ -120,12 +123,6 @@ void HttpServer::HandleHttpEvent(mg_connection *connection, http_message *http_r
 			handle_func(url, body, connection, &HttpServer::SendHttpRsp);
 		}
 	}
-	/*auto it = s_handler_map.find(url);
-	if (it != s_handler_map.end())
-	{
-		ReqHandler handle_func = it->second;
-		handle_func(url, body, connection, &HttpServer::SendHttpRsp);
-	}*/
 
 	// 其他请求
 	if (route_check(http_req, "/")) // index page
